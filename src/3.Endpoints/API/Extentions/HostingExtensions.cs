@@ -64,6 +64,10 @@ public static class HostingExtensions
         //API Documentation
         builder.Services.AddOpenApi();
 
+        //Health Checks
+        builder.Services.AddHealthChecks()
+            .AddDbContext<TranslationProviderCommandDbContext>();
+
         return builder.Build();
     }
 
@@ -98,6 +102,9 @@ public static class HostingExtensions
         //var useIdentityServer = app.UseIdentityServer("OAuth");
 
         var controllerBuilder = app.MapControllers();
+
+        //Health Checks
+        app.MapHealthChecks("/health");
 
         //if (useIdentityServer)
         //    controllerBuilder.RequireAuthorization();

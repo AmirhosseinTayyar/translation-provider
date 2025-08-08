@@ -12,6 +12,8 @@ services:
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
       - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=TranslationProviderDb;User=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
+      - ConnectionStrings__CommandDb_ConnectionString=Server=sqlserver;Database=TranslationProviderDb;User=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
+      - ConnectionStrings__QueryDb_ConnectionString=Server=sqlserver;Database=TranslationProviderDb;User=sa;Password=YourStrong@Passw0rd;TrustServerCertificate=true;
       - ApplicationName=Translation Provider
       - ServiceId=translation-provider
       - ServiceName=Translation Provider Service

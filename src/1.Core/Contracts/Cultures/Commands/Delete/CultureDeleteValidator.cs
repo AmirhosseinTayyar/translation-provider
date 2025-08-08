@@ -9,7 +9,7 @@ public sealed class CultureDeleteValidator : AbstractValidator<CultureDeleteComm
 {
     public CultureDeleteValidator(ITranslator translator)
     {
-        RuleFor(c => c.BusinessId)
+        RuleFor(command => command.BusinessId)
             .ProjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
     }
 }

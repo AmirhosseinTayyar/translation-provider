@@ -10,14 +10,14 @@ public sealed class CultureUpdateValidator : AbstractValidator<CultureUpdateComm
 {
     public CultureUpdateValidator(ITranslator translator)
     {
-        RuleFor(c => c.BusinessId)
+        RuleFor(command => command.BusinessId)
             .ProjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
 
-        RuleFor(c => c.Key)
+        RuleFor(command => command.Key)
             .ProjectNotEmpty(translator, CultureKey.CULTURE_KEY)
             .ProjectLength(translator, CultureKey.CULTURE_KEY, CultureKey.MIN_LENGTH, CultureKey.MAX_LENGTH);
 
-        RuleFor(c => c.LatinTitle)
+        RuleFor(command => command.LatinTitle)
             .ProjectNotEmpty(translator, LatinTitle.LATIN_TITLE)
             .ProjectLength(translator, LatinTitle.LATIN_TITLE, LatinTitle.MIN_LENGTH, LatinTitle.MAX_LENGTH);
     }

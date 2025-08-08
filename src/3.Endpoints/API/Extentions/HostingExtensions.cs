@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 using Serilog;
 using TranslationProvider.Infra.Data.Sql.Commands.Common;
 using TranslationProvider.Infra.Data.Sql.Queries.Common;
@@ -60,10 +61,8 @@ public static class HostingExtensions
 
         //builder.Services.AddZaminRabbitMqMessageBus(configuration, "RabbitMq");
 
-        //builder.Services.AddZaminTraceJeager(configuration, "OpenTeletmetry");
-
         //API Documentation
-        builder.Services.AddZaminScalar(builder.Configuration, "Scalar");
+        builder.Services.AddOpenApi();
 
         return builder.Build();
     }
@@ -79,7 +78,8 @@ public static class HostingExtensions
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.UseZaminScalar();
+            app.MapOpenApi();
+            app.MapScalarApiReference();
         }
 
         app.UseStatusCodePages();

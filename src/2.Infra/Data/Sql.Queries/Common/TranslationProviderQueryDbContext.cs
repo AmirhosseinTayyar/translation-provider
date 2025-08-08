@@ -8,6 +8,7 @@ public sealed class TranslationProviderQueryDbContext(DbContextOptions<Translati
 {
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.HasDefaultSchema("app");
         base.OnModelCreating(builder);
     }
 }

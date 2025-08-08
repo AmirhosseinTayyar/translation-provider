@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TranslationProvider.Infra.Data.Sql.Commands.Common;
 
@@ -11,13 +12,14 @@ using TranslationProvider.Infra.Data.Sql.Commands.Common;
 namespace TranslationProvider.Infra.Data.Sql.Commands.Common.Migrations
 {
     [DbContext(typeof(TranslationProviderCommandDbContext))]
-    partial class TranslationProviderCommandDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250808165552_AddTranslationFeature")]
+    partial class AddTranslationFeature
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("app")
                 .HasAnnotation("ProductVersion", "9.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -75,7 +77,7 @@ namespace TranslationProvider.Infra.Data.Sql.Commands.Common.Migrations
                     b.HasIndex("Key")
                         .IsUnique();
 
-                    b.ToTable("Culture", "app");
+                    b.ToTable("Culture");
                 });
 
             modelBuilder.Entity("TranslationProvider.Core.Domain.Translations.Entities.Translation", b =>
@@ -131,7 +133,7 @@ namespace TranslationProvider.Infra.Data.Sql.Commands.Common.Migrations
                     b.HasIndex("BusinessId")
                         .IsUnique();
 
-                    b.ToTable("Translation", "app");
+                    b.ToTable("Translation");
                 });
 
             modelBuilder.Entity("Zamin.Extensions.Events.Abstractions.OutBoxEventItem", b =>

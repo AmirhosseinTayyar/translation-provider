@@ -9,6 +9,7 @@ public sealed class TranslationProviderCommandDbContext(DbContextOptions<Transla
 {
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.HasDefaultSchema("app");
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         base.OnModelCreating(builder);
     }

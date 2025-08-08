@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TranslationProvider.Infra.Data.Sql.Commands.Common;
 
@@ -11,9 +12,11 @@ using TranslationProvider.Infra.Data.Sql.Commands.Common;
 namespace TranslationProvider.Infra.Data.Sql.Commands.Common.Migrations
 {
     [DbContext(typeof(TranslationProviderCommandDbContext))]
-    partial class TranslationProviderCommandDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250808171337_RenameTables")]
+    partial class RenameTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

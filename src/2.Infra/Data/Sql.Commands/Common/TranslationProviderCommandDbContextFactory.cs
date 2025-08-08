@@ -11,6 +11,7 @@ public sealed class TranslationProviderCommandDbContextFactory : IDesignTimeDbCo
         IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
+            .AddJsonFile($"appsettings.Development.json")
             .Build();
 
         var builder = new DbContextOptionsBuilder<TranslationProviderCommandDbContext>();

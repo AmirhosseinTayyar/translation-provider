@@ -16,7 +16,7 @@ public sealed class Culture : AggregateRoot<int>
     public const int KEY_MIN_LENGTH = 5;
     public const int KEY_MAX_LENGTH = 10;
     public const int LATIN_TITLE_MIN_LENGTH = 2;
-    public const int LATIN_TITLE_MAX_LENGTH = 2048;
+    public const int LATIN_TITLE_MAX_LENGTH = 32;
     #endregion
 
     #region Properties

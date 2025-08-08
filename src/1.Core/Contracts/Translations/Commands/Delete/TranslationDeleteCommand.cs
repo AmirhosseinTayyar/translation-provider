@@ -1,5 +1,5 @@
-﻿using Zamin.Core.RequestResponse.Commands;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using Zamin.Core.RequestResponse.Commands;
 
 namespace TranslationProvider.Core.Contracts.Translations.Commands.Delete;
 

@@ -10,6 +10,6 @@ public sealed class CultureDeleteValidator : AbstractValidator<CultureDeleteComm
     public CultureDeleteValidator(ITranslator translator)
     {
         RuleFor(c => c.BusinessId)
-            .PrjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
+            .ProjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
     }
 }

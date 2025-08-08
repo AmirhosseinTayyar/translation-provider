@@ -1,6 +1,6 @@
-﻿using TranslationProvider.Core.Domain.Translations.Parameters;
+﻿using System.ComponentModel;
+using TranslationProvider.Core.Domain.Translations.Parameters;
 using Zamin.Core.RequestResponse.Commands;
-using System.ComponentModel;
 
 namespace TranslationProvider.Core.Contracts.Translations.Commands.Create;
 

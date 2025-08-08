@@ -82,7 +82,7 @@ public static class NumberValidationExtentions
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name, TProperty valueToCompare)
         where TProperty : IComparable<TProperty>, IComparable
         => ruleBuilder.GreaterThan(valueToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GRATER_THAN,
+        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GREATER_THAN,
                                 name,
                                 valueToCompare.ToString() ?? string.Empty]);
 
@@ -95,7 +95,7 @@ public static class NumberValidationExtentions
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name, TProperty valueToCompare)
         where TProperty : IComparable<TProperty>, IComparable
         => ruleBuilder.GreaterThanOrEqualTo(valueToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GRATER_OR_EQUAL_THAN,
+        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GREATER_OR_EQUAL_THAN,
                                 name,
                                 valueToCompare.ToString() ?? string.Empty]);
 
@@ -108,7 +108,7 @@ public static class NumberValidationExtentions
         this IRuleBuilder<T, TProperty?> ruleBuilder, ITranslator translator, string name, TProperty valueToCompare)
         where TProperty : struct, IComparable<TProperty>, IComparable
         => ruleBuilder.GreaterThanOrEqualTo(valueToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GRATER_OR_EQUAL_THAN,
+        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GREATER_OR_EQUAL_THAN,
                                 name,
                                 valueToCompare.ToString() ?? string.Empty]);
 
@@ -134,7 +134,7 @@ public static class NumberValidationExtentions
         this IRuleBuilder<T, TProperty?> ruleBuilder, ITranslator translator, string name, TProperty valueToCompare)
         where TProperty : struct, IComparable<TProperty>, IComparable
         => ruleBuilder.GreaterThan(valueToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GRATER_THAN,
+        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NUMBER_GREATER_THAN,
                                 name,
                                 valueToCompare.ToString() ?? string.Empty]);
 }

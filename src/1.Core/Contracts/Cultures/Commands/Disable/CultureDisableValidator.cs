@@ -10,6 +10,6 @@ public sealed class CultureDisableValidator : AbstractValidator<CultureDisableCo
     public CultureDisableValidator(ITranslator translator)
     {
         RuleFor(c => c.BusinessId)
-            .PrjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
+            .ProjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
     }
 }

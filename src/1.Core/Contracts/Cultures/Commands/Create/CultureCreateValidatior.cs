@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using TranslationProvider.Core.Contracts.Common.FluentValidation;
-using TranslationProvider.Core.Domain.Cultures.Entities;
+using TranslationProvider.Core.Domain.Common.ValueObjects;
 using Zamin.Extensions.Translations.Abstractions;
 
 namespace TranslationProvider.Core.Contracts.Cultures.Commands.Create;
@@ -10,11 +10,11 @@ public sealed class CultureCreateValidatior : AbstractValidator<CultureCreateCom
     public CultureCreateValidatior(ITranslator translator)
     {
         RuleFor(c => c.Key)
-            .PrjectNotEmpty(translator, Culture.KEY)
-            .PrjectLength(translator, Culture.KEY, Culture.KEY_MIN_LENGTH, Culture.KEY_MAX_LENGTH);
+            .ProjectNotEmpty(translator, CultureKey.CULTURE_KEY)
+            .ProjectLength(translator, CultureKey.CULTURE_KEY, CultureKey.MIN_LENGTH, CultureKey.MAX_LENGTH);
 
         RuleFor(c => c.LatinTitle)
-            .PrjectNotEmpty(translator, Culture.LATIN_TITLE)
-            .PrjectLength(translator, Culture.LATIN_TITLE, Culture.LATIN_TITLE_MIN_LENGTH, Culture.LATIN_TITLE_MAX_LENGTH);
+            .ProjectNotEmpty(translator, LatinTitle.LATIN_TITLE)
+            .ProjectLength(translator, LatinTitle.LATIN_TITLE, LatinTitle.MIN_LENGTH, LatinTitle.MAX_LENGTH);
     }
 }

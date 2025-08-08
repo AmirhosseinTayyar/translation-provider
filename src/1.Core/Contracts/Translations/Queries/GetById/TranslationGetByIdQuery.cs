@@ -1,5 +1,5 @@
-﻿using Zamin.Core.RequestResponse.Queries;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using Zamin.Core.RequestResponse.Queries;
 
 namespace TranslationProvider.Core.Contracts.Translations.Queries.GetById;
 

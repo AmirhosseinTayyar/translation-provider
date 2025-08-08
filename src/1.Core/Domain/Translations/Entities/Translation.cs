@@ -1,5 +1,7 @@
-﻿using TranslationProvider.Core.Domain.Translations.Events;
+﻿using TranslationProvider.Core.Domain.Common.ValueObjects;
+using TranslationProvider.Core.Domain.Translations.Events;
 using TranslationProvider.Core.Domain.Translations.Parameters;
+using TranslationProvider.Core.Domain.Translations.ValueObjects;
 using Zamin.Core.Domain.Entities;
 
 namespace TranslationProvider.Core.Domain.Translations.Entities;
@@ -8,19 +10,12 @@ public sealed class Translation : AggregateRoot<int>
 {
     #region Constants
     public const string TRANSLATION = nameof(TRANSLATION);
-    public const string KEY = nameof(KEY);
-    public const string VALUE = nameof(VALUE);
-    public const string CULTURE = nameof(CULTURE);
-    public const int KEY_MIN_LENGTH = 1;
-    public const int KEY_MAX_LENGTH = 2048;
-    public const int VALUE_MIN_LENGTH = 1;
-    public const int VALUE_MAX_LENGTH = 2048;
     #endregion
 
     #region Properties
-    public string Key { get; private set; } = default!;
-    public string Value { get; private set; } = default!;
-    public string Culture { get; private set; } = default!;
+    public TranslationKey Key { get; private set; } = default!;
+    public TranslationValue Value { get; private set; } = default!;
+    public CultureKey Culture { get; private set; } = default!;
     #endregion
 
     #region Constructors
@@ -29,10 +24,10 @@ public sealed class Translation : AggregateRoot<int>
     private Translation(TranslationCreateParameter parameter)
     {
         BusinessId = Zamin.Core.Domain.ValueObjects.BusinessId.FromGuid(Guid.CreateVersion7());
-        Key = parameter.Key;
-        Value = parameter.Value;
-        Culture = parameter.Culture;
-        AddEvent(new TranslationCreated(BusinessId.Value, Key, Value, Culture));
+        Key = TranslationKey.FromString(parameter.Key);
+        Value = TranslationValue.FromString(parameter.Value);
+        Culture = CultureKey.FromString(parameter.Culture);
+        AddEvent(new TranslationCreated(BusinessId.Value, (string)Key, (string)Value, (string)Culture));
     }
     #endregion
 
@@ -41,10 +36,10 @@ public sealed class Translation : AggregateRoot<int>
 
     public void Update(TranslationUpdateParameter parameter)
     {
-        Key = parameter.Key;
-        Value = parameter.Value;
-        Culture = parameter.Culture;
-        AddEvent(new TranslationUpdated(BusinessId.Value, Key, Value, Culture));
+        Key = TranslationKey.FromString(parameter.Key);
+        Value = TranslationValue.FromString(parameter.Value);
+        Culture = CultureKey.FromString(parameter.Culture);
+        AddEvent(new TranslationUpdated(BusinessId.Value, (string)Key, (string)Value, (string)Culture));
     }
 
     public void Delete()

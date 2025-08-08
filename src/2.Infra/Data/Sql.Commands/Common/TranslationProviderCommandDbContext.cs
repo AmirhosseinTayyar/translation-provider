@@ -4,12 +4,9 @@ using Zamin.Extensions.Events.Outbox.Dal.EF;
 
 namespace TranslationProvider.Infra.Data.Sql.Commands.Common;
 
-public class TranslationProviderCommandDbContext : BaseOutboxCommandDbContext
+public sealed class TranslationProviderCommandDbContext(DbContextOptions<TranslationProviderCommandDbContext> options)
+    : BaseOutboxCommandDbContext(options)
 {
-    public TranslationProviderCommandDbContext(DbContextOptions<TranslationProviderCommandDbContext> options) : base(options)
-    {
-    }
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

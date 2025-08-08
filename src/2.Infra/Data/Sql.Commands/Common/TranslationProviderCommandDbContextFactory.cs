@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace TranslationProvider.Infra.Data.Sql.Commands.Common;
 
-public class TranslationProviderCommandDbContextFactory : IDesignTimeDbContextFactory<TranslationProviderCommandDbContext>
+public sealed class TranslationProviderCommandDbContextFactory : IDesignTimeDbContextFactory<TranslationProviderCommandDbContext>
 {
     public TranslationProviderCommandDbContext CreateDbContext(string[] args)
     {

@@ -3,9 +3,7 @@ using Zamin.Infra.Data.Sql.Queries;
 
 namespace TranslationProvider.Infra.Data.Sql.Queries.Common;
 
-public class TranslationProviderQueryDbContext : BaseQueryDbContext
+public sealed class TranslationProviderQueryDbContext(DbContextOptions<TranslationProviderQueryDbContext> options)
+    : BaseQueryDbContext(options)
 {
-    public TranslationProviderQueryDbContext(DbContextOptions<TranslationProviderQueryDbContext> options) : base(options)
-    {
-    }
 }

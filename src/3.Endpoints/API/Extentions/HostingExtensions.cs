@@ -79,7 +79,6 @@ public static class HostingExtensions
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.MapOpenApi();
             app.UseZaminScalar();
         }
 

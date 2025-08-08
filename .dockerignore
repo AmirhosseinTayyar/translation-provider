@@ -1,0 +1,64 @@
+# .dockerignore
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+CONTRIBUTING.md
+docs/
+
+# Build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# NuGet packages
+**/packages/
+**/*.nupkg
+
+# Visual Studio
+.vs/
+**/*.user
+**/*.vspscc
+**/*.vssscc
+**/.vscode/
+
+# Temporary files
+**/*.tmp
+**/*.temp
+**/*.log
+
+# Test results
+**/TestResults/
+**/*.trx
+
+# Coverage reports
+**/coverage/
+**/*.coverage
+**/*.coveragexml
+
+# JetBrains Rider
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Application specific
+**/appsettings.Development.json
+**/appsettings.Local.json

@@ -1,4 +1,4 @@
-﻿using TranslationProvider.Endpoints.API.Extentions;
+﻿using Endpoints.API.Extentions;
 using Zamin.Extensions.DependencyInjection;
 using Zamin.Utilities.SerilogRegistration.Extensions;
 

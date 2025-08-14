@@ -1,8 +1,8 @@
-﻿using TranslationProvider.Core.Domain.Common.Resources;
+﻿using Core.Domain.Common.Consts;
 using Zamin.Core.Domain.Entities;
 using Zamin.Core.Domain.Exceptions;
 
-namespace TranslationProvider.Core.Domain.Common.Guards;
+namespace Core.Domain.Common.Guards;
 
 public static class EntityGuard
 {
@@ -12,7 +12,7 @@ public static class EntityGuard
     {
         if (entity is null)
         {
-            throw new InvalidEntityStateException(ProjectValidationError.VALIDATION_ERROR_NOT_EXIST, parameters);
+            throw new InvalidEntityStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_EXIST, parameters);
         }
     }
 }

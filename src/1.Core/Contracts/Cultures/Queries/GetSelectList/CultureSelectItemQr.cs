@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Queries.GetSelectList;
+namespace Core.Contracts.Cultures.Queries.GetSelectList;
 
 public sealed class CultureSelectItemQr
 {

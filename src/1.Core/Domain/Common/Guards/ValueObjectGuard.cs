@@ -1,8 +1,8 @@
-﻿using TranslationProvider.Core.Domain.Common.Resources;
+﻿using Core.Domain.Common.Consts;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.Domain.ValueObjects;
 
-namespace TranslationProvider.Core.Domain.Common.Guards;
+namespace Core.Domain.Common.Guards;
 
 public static class ValueObjectGuard
 {
@@ -10,6 +10,6 @@ public static class ValueObjectGuard
         where TValueObject : BaseValueObject<TValueObject>
     {
         if (value is null)
-            throw new InvalidEntityStateException(ProjectValidationError.VALIDATION_ERROR_REQUIRED_VALUE, parameters);
+            throw new InvalidEntityStateException(ProjectValidationErrors.VALIDATION_ERROR_REQUIRED_VALUE, parameters);
     }
 }

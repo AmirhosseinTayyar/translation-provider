@@ -1,17 +1,17 @@
-﻿using FluentValidation;
-using TranslationProvider.Core.Contracts.Common.FluentValidation;
-using TranslationProvider.Core.Domain.Common.Resources;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
+﻿using Core.Contracts.Common.FluentValidation;
+using Core.Domain.Common.Consts;
+using Core.Domain.Common.ValueObjects;
+using FluentValidation;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Commands.Update;
+namespace Core.Contracts.Cultures.Commands.Update;
 
 public sealed class CultureUpdateValidator : AbstractValidator<CultureUpdateCommand>
 {
     public CultureUpdateValidator(ITranslator translator)
     {
         RuleFor(command => command.BusinessId)
-            .ProjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
+            .ProjectNotEmpty(translator, ProjectNamings.BUSINESS_ID);
 
         RuleFor(command => command.Key)
             .ProjectNotEmpty(translator, CultureKey.CULTURE_KEY)

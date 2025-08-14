@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Infra.Data.Sql.Queries.Cultures.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TranslationProvider.Infra.Data.Sql.Queries.Cultures.Entities;
 
-namespace TranslationProvider.Infra.Data.Sql.Queries.Cultures.Configs;
+namespace Infra.Data.Sql.Queries.Cultures.Configs;
 
 public sealed class CultureConfig : IEntityTypeConfiguration<Culture>
 {

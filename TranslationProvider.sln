@@ -13,17 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0F1C1A26-926
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{32B42A7E-3C12-44B7-ADA9-41294B12820A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationProvider.Core.Domain", "src\1.Core\Domain\TranslationProvider.Core.Domain.csproj", "{F9C803E2-0380-4A51-B680-7ADBEC12C6A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "src\1.Core\Domain\Core.Domain.csproj", "{F9C803E2-0380-4A51-B680-7ADBEC12C6A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationProvider.Core.Contracts", "src\1.Core\Contracts\TranslationProvider.Core.Contracts.csproj", "{95F79136-C06D-4181-84A7-FEBCD76EDAA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Contracts", "src\1.Core\Contracts\Core.Contracts.csproj", "{95F79136-C06D-4181-84A7-FEBCD76EDAA7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationProvider.Core.ApplicationService", "src\1.Core\ApplicationService\TranslationProvider.Core.ApplicationService.csproj", "{66934AB3-A786-4DA8-9FB8-2B61297D3817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.ApplicationService", "src\1.Core\ApplicationService\Core.ApplicationService.csproj", "{66934AB3-A786-4DA8-9FB8-2B61297D3817}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationProvider.Infra.Data.Sql.Commands", "src\2.Infra\Data\Sql.Commands\TranslationProvider.Infra.Data.Sql.Commands.csproj", "{BC9C8A96-43C3-4D83-AD3A-ED68128C4E4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data.Sql.Commands", "src\2.Infra\Data\Sql.Commands\Infra.Data.Sql.Commands.csproj", "{BC9C8A96-43C3-4D83-AD3A-ED68128C4E4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationProvider.Infra.Data.Sql.Queries", "src\2.Infra\Data\Sql.Queries\TranslationProvider.Infra.Data.Sql.Queries.csproj", "{424EDF2D-8758-4445-BF2B-1ECD8BD83477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data.Sql.Queries", "src\2.Infra\Data\Sql.Queries\Infra.Data.Sql.Queries.csproj", "{424EDF2D-8758-4445-BF2B-1ECD8BD83477}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationProvider.Endpoints.API", "src\3.Endpoints\API\TranslationProvider.Endpoints.API.csproj", "{C3F25BFC-4051-400F-8C8A-89F90D8FD0A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Endpoints.API", "src\3.Endpoints\API\Endpoints.API.csproj", "{C3F25BFC-4051-400F-8C8A-89F90D8FD0A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

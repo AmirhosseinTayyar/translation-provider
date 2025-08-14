@@ -1,6 +1,6 @@
-﻿namespace TranslationProvider.Core.Domain.Common.Resources;
+﻿namespace Core.Domain.Common.Consts;
 
-public abstract class ProjectValidationError
+public abstract class ProjectValidationErrors
 {
     #region Basic Validations
     //Pattern: {0} is not valid

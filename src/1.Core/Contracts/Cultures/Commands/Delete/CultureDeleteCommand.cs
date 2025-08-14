@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Zamin.Core.RequestResponse.Commands;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Commands.Delete;
+namespace Core.Contracts.Cultures.Commands.Delete;
 
 public sealed record CultureDeleteCommand : ICommand
 {

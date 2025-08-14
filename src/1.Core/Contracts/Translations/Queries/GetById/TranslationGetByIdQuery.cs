@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Zamin.Core.RequestResponse.Queries;
 
-namespace TranslationProvider.Core.Contracts.Translations.Queries.GetById;
+namespace Core.Contracts.Translations.Queries.GetById;
 
 public sealed record TranslationGetByIdQuery : IQuery<TranslationQr?>
 {

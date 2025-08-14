@@ -7,11 +7,12 @@
 		</PropertyGroup>
 
 		<ItemGroup>
-				<PackageReference Include="Zamin.Core.ApplicationServices" Version="9.0.0" />
+				<PackageReference Include="Zamin.Core.Contracts" Version="9.0.0" />
+				<PackageReference Include="Zamin.Core.RequestResponse" Version="9.0.0" />
 		</ItemGroup>
 
 		<ItemGroup>
-		  <ProjectReference Include="..\Contracts\TranslationProvider.Core.Contracts.csproj" />
+				<ProjectReference Include="..\Domain\Core.Domain.csproj" />
 		</ItemGroup>
 
 </Project>

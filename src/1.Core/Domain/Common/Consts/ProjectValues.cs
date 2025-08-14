@@ -1,6 +1,6 @@
-﻿namespace TranslationProvider.Core.Domain.Common.Resources;
+﻿namespace Core.Domain.Common.Consts;
 
-public abstract class ProjectConsts
+public abstract class ProjectValues
 {
     #region Global
     public const int ID_MIN_VALUE = 1;

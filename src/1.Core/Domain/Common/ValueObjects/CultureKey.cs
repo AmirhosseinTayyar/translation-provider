@@ -1,9 +1,9 @@
+using Core.Domain.Common.Consts;
 using System.Globalization;
-using TranslationProvider.Core.Domain.Common.Resources;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.Domain.ValueObjects;
 
-namespace TranslationProvider.Core.Domain.Common.ValueObjects;
+namespace Core.Domain.Common.ValueObjects;
 
 public sealed class CultureKey : BaseValueObject<CultureKey>
 {
@@ -32,12 +32,12 @@ public sealed class CultureKey : BaseValueObject<CultureKey>
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, CULTURE_KEY);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, CULTURE_KEY);
         }
 
         if (value.Length < MIN_LENGTH || value.Length > MAX_LENGTH)
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
                                                        CULTURE_KEY,
                                                        MIN_LENGTH.ToString(),
                                                        MAX_LENGTH.ToString());
@@ -51,7 +51,7 @@ public sealed class CultureKey : BaseValueObject<CultureKey>
 
         if (!cultures.Any(culture => culture.Equals(value)))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, CULTURE_KEY);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, CULTURE_KEY);
         }
     }
     #endregion

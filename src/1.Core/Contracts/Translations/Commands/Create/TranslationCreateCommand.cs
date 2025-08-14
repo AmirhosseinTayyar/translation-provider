@@ -1,8 +1,8 @@
-﻿using System.ComponentModel;
-using TranslationProvider.Core.Domain.Translations.Parameters;
+﻿using Core.Domain.Translations.Parameters;
+using System.ComponentModel;
 using Zamin.Core.RequestResponse.Commands;
 
-namespace TranslationProvider.Core.Contracts.Translations.Commands.Create;
+namespace Core.Contracts.Translations.Commands.Create;
 
 public sealed record TranslationCreateCommand : ICommand<Guid>
 {

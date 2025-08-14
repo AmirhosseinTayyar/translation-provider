@@ -1,9 +1,9 @@
-﻿using FluentValidation;
+﻿using Core.Domain.Common.Consts;
+using FluentValidation;
 using System.Text.RegularExpressions;
-using TranslationProvider.Core.Domain.Common.Resources;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Common.FluentValidation;
+namespace Core.Contracts.Common.FluentValidation;
 
 public static class StringValidationExtentions
 {
@@ -15,7 +15,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectLength<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name, int min, int max)
         => ruleBuilder.Length(min, max)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
                                 name, min.ToString(),
                                 max.ToString()]);
 
@@ -27,7 +27,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMinimumLength<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name, int minLength)
         => ruleBuilder.MinimumLength(minLength)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MIN_LENGTH,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MIN_LENGTH,
                                 name, minLength.ToString()]);
 
     /// <summary>
@@ -38,7 +38,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMaximumLength<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name, int maxLength)
         => ruleBuilder.MaximumLength(maxLength)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MAX_LENGTH,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MAX_LENGTH,
                                 name, maxLength.ToString()]);
 
     /// <summary>
@@ -49,7 +49,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectExactLength<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name, int exactLength)
         => ruleBuilder.Length(exactLength)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_LENGTH_MUST_EQUAL,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_LENGTH_MUST_EQUAL,
                                 name, exactLength.ToString()]);
 
     /// <summary>
@@ -60,7 +60,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMustHaveUpperCase<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Must(s => !string.IsNullOrEmpty(s) && s.Any(char.IsUpper))
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MUST_HAS_UPPER_CASE, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MUST_HAS_UPPER_CASE, name]);
 
     /// <summary>
     /// Validates string contains at least one lowercase letter.
@@ -70,7 +70,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMustHaveLowerCase<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Must(s => !string.IsNullOrEmpty(s) && s.Any(char.IsLower))
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MUST_HAS_LOWER_CASE, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MUST_HAS_LOWER_CASE, name]);
 
     /// <summary>
     /// Validates string contains at least one digit.
@@ -80,7 +80,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMustHaveDigit<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Must(s => !string.IsNullOrEmpty(s) && s.Any(char.IsDigit))
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MUST_HAS_DIGIT, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MUST_HAS_DIGIT, name]);
 
     /// <summary>
     /// Validates string contains at least one non-alphanumeric character.
@@ -90,7 +90,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMustHaveNonAlphanumeric<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Must(s => !string.IsNullOrEmpty(s) && s.Any(c => !char.IsLetterOrDigit(c)))
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MUST_HAS_NON_ALPHA_NUMERIC, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MUST_HAS_NON_ALPHA_NUMERIC, name]);
 
     /// <summary>
     /// Validates string contains unique characters only.
@@ -100,7 +100,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMustHaveUniqueCharacters<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Must(s => string.IsNullOrEmpty(s) || s.Length == s.Distinct().Count())
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_STRING_MUST_HAS_UNIQUE_CHAR, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_STRING_MUST_HAS_UNIQUE_CHAR, name]);
 
     /// <summary>
     /// Validates string matches the specified regular expression pattern.
@@ -110,7 +110,7 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMatches<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name, string pattern)
         => ruleBuilder.Matches(pattern)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NOT_VALID, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, name]);
 
     /// <summary>
     /// Validates string matches the specified regular expression.
@@ -120,5 +120,5 @@ public static class StringValidationExtentions
     public static IRuleBuilderOptions<T, string> ProjectMatches<T>(
         this IRuleBuilder<T, string> ruleBuilder, ITranslator translator, string name, Regex regex)
         => ruleBuilder.Matches(regex)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NOT_VALID, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, name]);
 }

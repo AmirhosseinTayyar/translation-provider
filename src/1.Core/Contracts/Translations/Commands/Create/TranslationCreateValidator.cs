@@ -1,10 +1,10 @@
-﻿using FluentValidation;
-using TranslationProvider.Core.Contracts.Common.FluentValidation;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Translations.ValueObjects;
+﻿using Core.Contracts.Common.FluentValidation;
+using Core.Domain.Common.ValueObjects;
+using Core.Domain.Translations.ValueObjects;
+using FluentValidation;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Translations.Commands.Create;
+namespace Core.Contracts.Translations.Commands.Create;
 
 public sealed class TranslationCreateValidator : AbstractValidator<TranslationCreateCommand>
 {

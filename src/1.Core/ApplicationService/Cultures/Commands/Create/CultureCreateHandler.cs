@@ -1,14 +1,12 @@
-﻿using TranslationProvider.Core.Contracts.Cultures.Commands;
-using TranslationProvider.Core.Contracts.Cultures.Commands.Create;
-using TranslationProvider.Core.Domain.Common.Resources;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Cultures.Entities;
+﻿using Core.Domain.Common.Consts;
+using Core.Domain.Common.ValueObjects;
+using Core.Domain.Cultures.Entities;
 using Zamin.Core.ApplicationServices.Commands;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.RequestResponse.Commands;
 using Zamin.Utilities;
 
-namespace TranslationProvider.Core.ApplicationService.Cultures.Commands.Create;
+namespace Core.ApplicationService.Cultures.Commands.Create;
 
 public sealed class CultureCreateHandler(ZaminServices zaminServices, ICultureCommandRepository commandRepository)
     : CommandHandler<CultureCreateCommand, Guid>(zaminServices)
@@ -19,7 +17,7 @@ public sealed class CultureCreateHandler(ZaminServices zaminServices, ICultureCo
 
         if (await commandRepository.ExistsAsync(entity => entity.Key.Equals(command.Key)))
         {
-            throw new InvalidEntityStateException(ProjectValidationError.VALIDATION_ERROR_DUPLICATE_VALUE,
+            throw new InvalidEntityStateException(ProjectValidationErrors.VALIDATION_ERROR_DUPLICATE_VALUE,
                                                   command.Key,
                                                   CultureKey.CULTURE_KEY,
                                                   Culture.CULTURE);

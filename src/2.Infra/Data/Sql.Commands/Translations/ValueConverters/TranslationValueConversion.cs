@@ -1,7 +1,7 @@
+using Core.Domain.Translations.ValueObjects;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TranslationProvider.Core.Domain.Translations.ValueObjects;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Translations.ValueConverters;
+namespace Infra.Data.Sql.Commands.Translations.ValueConverters;
 
 public class TranslationValueConversion : ValueConverter<TranslationValue, string>
 {

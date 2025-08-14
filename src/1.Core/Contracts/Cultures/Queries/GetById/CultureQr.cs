@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
+namespace Core.Contracts.Cultures.Queries.GetById;
 
 public sealed class CultureQr
 {

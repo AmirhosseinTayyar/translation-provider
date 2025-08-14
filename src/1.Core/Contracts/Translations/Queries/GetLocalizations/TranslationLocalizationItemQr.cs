@@ -1,4 +1,4 @@
-﻿namespace TranslationProvider.Core.Contracts.Translations.Queries.GetLocalizations;
+﻿namespace Core.Contracts.Translations.Queries.GetLocalizations;
 using System.ComponentModel;
 
 public sealed class TranslationLocalizationItemQr

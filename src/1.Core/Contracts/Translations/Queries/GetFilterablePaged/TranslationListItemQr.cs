@@ -1,4 +1,4 @@
-﻿namespace TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
+﻿namespace Core.Contracts.Translations.Queries.GetFilterablePaged;
 using System.ComponentModel;
 
 public sealed class TranslationListItemQr

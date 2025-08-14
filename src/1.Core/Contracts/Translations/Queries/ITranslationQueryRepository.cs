@@ -1,9 +1,9 @@
-﻿using TranslationProvider.Core.Contracts.Translations.Queries.GetById;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetLocalizations;
+﻿using Core.Contracts.Translations.Queries.GetById;
+using Core.Contracts.Translations.Queries.GetFilterablePaged;
+using Core.Contracts.Translations.Queries.GetLocalizations;
 using Zamin.Core.RequestResponse.Queries;
 
-namespace TranslationProvider.Core.Contracts.Translations.Queries;
+namespace Core.Contracts.Translations.Queries;
 
 public interface ITranslationQueryRepository
 {

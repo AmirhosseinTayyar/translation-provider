@@ -1,3 +1,3 @@
-namespace TranslationProvider.Core.Domain.Translations.Parameters;
+namespace Core.Domain.Translations.Parameters;
 
 public sealed record TranslationCreateParameter(string Key, string Value, string Culture);

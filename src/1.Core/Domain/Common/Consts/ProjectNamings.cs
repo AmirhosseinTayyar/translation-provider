@@ -1,6 +1,6 @@
-﻿namespace TranslationProvider.Core.Domain.Common.Resources;
+﻿namespace Core.Domain.Common.Consts;
 
-public abstract class ProjectTranslation
+public abstract class ProjectNamings
 {
     #region Common
     public const string ID = nameof(ID);

@@ -1,9 +1,9 @@
-﻿using FluentValidation;
-using TranslationProvider.Core.Contracts.Common.FluentValidation;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
+﻿using Core.Contracts.Common.FluentValidation;
+using Core.Domain.Common.ValueObjects;
+using FluentValidation;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Commands.Create;
+namespace Core.Contracts.Cultures.Commands.Create;
 
 public sealed class CultureCreateValidator : AbstractValidator<CultureCreateCommand>
 {

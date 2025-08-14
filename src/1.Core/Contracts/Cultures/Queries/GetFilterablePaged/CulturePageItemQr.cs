@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Queries.GetFilterablePaged;
+namespace Core.Contracts.Cultures.Queries.GetFilterablePaged;
 
 public sealed class CulturePageItemQr
 {

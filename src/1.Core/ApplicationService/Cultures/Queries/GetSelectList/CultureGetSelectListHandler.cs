@@ -1,10 +1,10 @@
-﻿using TranslationProvider.Core.Contracts.Cultures.Queries;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetSelectList;
+﻿using Core.Contracts.Cultures.Queries;
+using Core.Contracts.Cultures.Queries.GetSelectList;
 using Zamin.Core.ApplicationServices.Queries;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.Utilities;
 
-namespace TranslationProvider.Core.ApplicationService.Cultures.Queries.GetSelectList;
+namespace Core.ApplicationService.Cultures.Queries.GetSelectList;
 
 public sealed class CultureGetSelectListHandler(ZaminServices zaminServices, ICultureQueryRepository queryRepository)
     : QueryHandler<CultureGetSelectListQuery, List<CultureSelectItemQr>>(zaminServices)

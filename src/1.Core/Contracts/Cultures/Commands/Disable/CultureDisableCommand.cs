@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Zamin.Core.RequestResponse.Commands;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Commands.Disable;
+namespace Core.Contracts.Cultures.Commands.Disable;
 
 public sealed record CultureDisableCommand : ICommand
 {

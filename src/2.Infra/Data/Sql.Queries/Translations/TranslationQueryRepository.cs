@@ -1,14 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TranslationProvider.Core.Contracts.Translations.Queries;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetById;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetLocalizations;
-using TranslationProvider.Infra.Data.Sql.Queries.Common;
-using TranslationProvider.Infra.Data.Sql.Queries.Translations.Entities;
+﻿using Core.Contracts.Translations.Queries;
+using Core.Contracts.Translations.Queries.GetById;
+using Core.Contracts.Translations.Queries.GetFilterablePaged;
+using Core.Contracts.Translations.Queries.GetLocalizations;
+using Infra.Data.Sql.Queries.Common;
+using Infra.Data.Sql.Queries.Translations.Entities;
+using Microsoft.EntityFrameworkCore;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.Infra.Data.Sql.Queries;
 
-namespace TranslationProvider.Infra.Data.Sql.Queries.Translations;
+namespace Infra.Data.Sql.Queries.Translations;
 
 public class TranslationQueryRepository(TranslationProviderQueryDbContext dbContext)
     : BaseQueryRepository<TranslationProviderQueryDbContext>(dbContext), ITranslationQueryRepository

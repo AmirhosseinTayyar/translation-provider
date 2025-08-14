@@ -1,9 +1,9 @@
-﻿using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Cultures.Events;
-using TranslationProvider.Core.Domain.Cultures.Parameters;
+﻿using Core.Domain.Common.ValueObjects;
+using Core.Domain.Cultures.Events;
+using Core.Domain.Cultures.Parameters;
 using Zamin.Core.Domain.Entities;
 
-namespace TranslationProvider.Core.Domain.Cultures.Entities;
+namespace Core.Domain.Cultures.Entities;
 
 public sealed class Culture : AggregateRoot<int>
 {

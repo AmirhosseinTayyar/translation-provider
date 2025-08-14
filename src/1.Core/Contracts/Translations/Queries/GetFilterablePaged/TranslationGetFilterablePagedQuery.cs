@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Zamin.Core.RequestResponse.Queries;
 
-namespace TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
+namespace Core.Contracts.Translations.Queries.GetFilterablePaged;
 
 public sealed class TranslationGetFilterablePagedQuery : PageQuery<PagedData<TranslationListItemQr>>
 {

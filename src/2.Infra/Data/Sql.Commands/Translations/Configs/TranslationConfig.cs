@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Domain.Common.Consts;
+using Core.Domain.Common.ValueObjects;
+using Core.Domain.Translations.Entities;
+using Core.Domain.Translations.ValueObjects;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TranslationProvider.Core.Domain.Common.Resources;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Translations.Entities;
-using TranslationProvider.Core.Domain.Translations.ValueObjects;
 using Zamin.Infra.Data.Sql.Commands.Extensions;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Translations.Configs;
+namespace Infra.Data.Sql.Commands.Translations.Configs;
 
 public sealed class TranslationConfig : IEntityTypeConfiguration<Translation>
 {
@@ -16,7 +16,7 @@ public sealed class TranslationConfig : IEntityTypeConfiguration<Translation>
 
         builder.Property(c => c.BusinessId)
             .HasDefaultValue("NEWSEQUENTIALID()")
-            .HasMaxLength(ProjectConsts.BUSINESS_ID_LENGTH)
+            .HasMaxLength(ProjectValues.BUSINESS_ID_LENGTH)
             .IsRequired();
         builder.HasIndex(c => c.BusinessId).IsUnique();
 

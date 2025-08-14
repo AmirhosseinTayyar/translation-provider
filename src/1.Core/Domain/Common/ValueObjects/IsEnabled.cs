@@ -1,6 +1,6 @@
 using Zamin.Core.Domain.ValueObjects;
 
-namespace TranslationProvider.Core.Domain.Common.ValueObjects;
+namespace Core.Domain.Common.ValueObjects;
 
 public sealed class IsEnabled : BaseValueObject<IsEnabled>
 {

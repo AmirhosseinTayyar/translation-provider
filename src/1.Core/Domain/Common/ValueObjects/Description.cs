@@ -1,8 +1,8 @@
-﻿using TranslationProvider.Core.Domain.Common.Resources;
+﻿using Core.Domain.Common.Consts;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.Domain.ValueObjects;
 
-namespace TranslationProvider.Core.Domain.Common.ValueObjects;
+namespace Core.Domain.Common.ValueObjects;
 
 public sealed class Description : BaseValueObject<Description>
 {
@@ -31,12 +31,12 @@ public sealed class Description : BaseValueObject<Description>
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, DESCRIPTION);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, DESCRIPTION);
         }
 
         if (value.Length < MIN_LENGTH || value.Length > MAX_LENGTH)
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
                                                        DESCRIPTION,
                                                        MIN_LENGTH.ToString(),
                                                        MAX_LENGTH.ToString());

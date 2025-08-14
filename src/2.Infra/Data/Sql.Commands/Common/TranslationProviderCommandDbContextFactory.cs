@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Common;
+namespace Infra.Data.Sql.Commands.Common;
 
 public sealed class TranslationProviderCommandDbContextFactory : IDesignTimeDbContextFactory<TranslationProviderCommandDbContext>
 {

@@ -1,10 +1,10 @@
+using Core.Contracts.Common.FluentValidation;
+using Core.Domain.Common.ValueObjects;
+using Core.Domain.Translations.ValueObjects;
 using FluentValidation;
-using TranslationProvider.Core.Contracts.Common.FluentValidation;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Translations.ValueObjects;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
+namespace Core.Contracts.Translations.Queries.GetFilterablePaged;
 
 public sealed class TranslationGetFilterablePagedValidator : AbstractValidator<TranslationGetFilterablePagedQuery>
 {

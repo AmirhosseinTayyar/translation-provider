@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+﻿using Infra.Data.Sql.Commands.Common;
+using Infra.Data.Sql.Queries.Common;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using Serilog;
-using TranslationProvider.Infra.Data.Sql.Commands.Common;
-using TranslationProvider.Infra.Data.Sql.Queries.Common;
 using Zamin.EndPoints.Web.Extensions.ModelBinding;
 using Zamin.Extensions.DependencyInjection;
 using Zamin.Infra.Data.Sql.Commands.Interceptors;
 
-namespace TranslationProvider.Endpoints.API.Extentions;
+namespace Endpoints.API.Extentions;
 
 public static class HostingExtensions
 {

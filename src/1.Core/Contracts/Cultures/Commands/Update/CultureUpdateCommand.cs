@@ -1,8 +1,8 @@
-﻿using System.ComponentModel;
-using TranslationProvider.Core.Domain.Cultures.Parameters;
+﻿using Core.Domain.Cultures.Parameters;
+using System.ComponentModel;
 using Zamin.Core.RequestResponse.Commands;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Commands.Update;
+namespace Core.Contracts.Cultures.Commands.Update;
 
 public sealed record CultureUpdateCommand : ICommand
 {

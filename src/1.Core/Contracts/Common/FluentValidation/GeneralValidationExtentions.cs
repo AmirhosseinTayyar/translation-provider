@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using TranslationProvider.Core.Domain.Common.Resources;
+﻿using Core.Domain.Common.Consts;
+using FluentValidation;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Common.FluentValidation;
+namespace Core.Contracts.Common.FluentValidation;
 
 public static class GeneralValidationExtentions
 {
@@ -14,7 +14,7 @@ public static class GeneralValidationExtentions
     public static IRuleBuilderOptions<T, TProperty> ProjectNotNull<T, TProperty>(
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.NotNull()
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_REQUIRED, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_REQUIRED, name]);
 
     /// <summary>
     /// Validates that the property is not empty.
@@ -24,7 +24,7 @@ public static class GeneralValidationExtentions
     public static IRuleBuilderOptions<T, TProperty> ProjectNotEmpty<T, TProperty>(
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.NotEmpty()
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_REQUIRED, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_REQUIRED, name]);
 
     /// <summary>
     /// Validates that the property is a valid enum value.
@@ -34,7 +34,7 @@ public static class GeneralValidationExtentions
     public static IRuleBuilderOptions<T, TProperty> ProjectIsEnum<T, TProperty>(
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.IsInEnum()
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NOT_VALID, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, name]);
 
     /// <summary>
     /// Validates that the property must be null.
@@ -44,7 +44,7 @@ public static class GeneralValidationExtentions
     public static IRuleBuilderOptions<T, TProperty> ProjectMustBeNull<T, TProperty>(
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Null()
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NOT_VALID, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, name]);
 
     /// <summary>
     /// Validates that the property must be empty.
@@ -54,7 +54,7 @@ public static class GeneralValidationExtentions
     public static IRuleBuilderOptions<T, TProperty> ProjectMustBeEmpty<T, TProperty>(
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.Empty()
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NOT_VALID, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, name]);
 
     /// <summary>
     /// Custom validation predicate.
@@ -64,5 +64,5 @@ public static class GeneralValidationExtentions
     public static IRuleBuilderOptions<T, TProperty> ProjectMust<T, TProperty>(
         this IRuleBuilder<T, TProperty> ruleBuilder, ITranslator translator, string name, Func<TProperty, bool> predicate)
         => ruleBuilder.Must(predicate)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_NOT_VALID, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, name]);
 }

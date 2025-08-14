@@ -1,8 +1,8 @@
-using TranslationProvider.Core.Domain.Common.Resources;
+using Core.Domain.Common.Consts;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.Domain.ValueObjects;
 
-namespace TranslationProvider.Core.Domain.Common.ValueObjects;
+namespace Core.Domain.Common.ValueObjects;
 
 public sealed class LatinTitle : BaseValueObject<LatinTitle>
 {
@@ -31,12 +31,12 @@ public sealed class LatinTitle : BaseValueObject<LatinTitle>
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, LATIN_TITLE);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, LATIN_TITLE);
         }
 
         if (value.Length < MIN_LENGTH || value.Length > MAX_LENGTH)
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
                                                        LATIN_TITLE,
                                                        MIN_LENGTH.ToString(),
                                                        MAX_LENGTH.ToString());
@@ -45,7 +45,7 @@ public sealed class LatinTitle : BaseValueObject<LatinTitle>
         // Validate that the title follows uppercase format with underscores for multi-word
         if (!value.All(c => char.IsUpper(c) || char.IsDigit(c) || c == '_'))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, LATIN_TITLE);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, LATIN_TITLE);
         }
     }
     #endregion

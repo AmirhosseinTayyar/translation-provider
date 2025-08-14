@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Zamin.Core.RequestResponse.Queries;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
+namespace Core.Contracts.Cultures.Queries.GetById;
 
 public sealed record CultureGetByIdQuery : IQuery<CultureQr?>
 {

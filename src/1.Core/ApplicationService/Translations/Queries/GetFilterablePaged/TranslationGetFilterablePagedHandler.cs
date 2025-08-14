@@ -1,10 +1,10 @@
-﻿using TranslationProvider.Core.Contracts.Translations.Queries;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
+﻿using Core.Contracts.Translations.Queries;
+using Core.Contracts.Translations.Queries.GetFilterablePaged;
 using Zamin.Core.ApplicationServices.Queries;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.Utilities;
 
-namespace TranslationProvider.Core.ApplicationService.Translations.Queries.GetFilterablePaged;
+namespace Core.ApplicationService.Translations.Queries.GetFilterablePaged;
 
 public sealed class TranslationGetFilterablePagedHandler(ZaminServices zaminServices, ITranslationQueryRepository queryRepository)
     : QueryHandler<TranslationGetFilterablePagedQuery, PagedData<TranslationListItemQr>>(zaminServices)

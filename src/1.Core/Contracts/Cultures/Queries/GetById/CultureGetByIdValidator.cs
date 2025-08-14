@@ -1,15 +1,15 @@
+using Core.Contracts.Common.FluentValidation;
+using Core.Domain.Common.Consts;
 using FluentValidation;
-using TranslationProvider.Core.Contracts.Common.FluentValidation;
-using TranslationProvider.Core.Domain.Common.Resources;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
+namespace Core.Contracts.Cultures.Queries.GetById;
 
 public sealed class CultureGetByIdValidator : AbstractValidator<CultureGetByIdQuery>
 {
     public CultureGetByIdValidator(ITranslator translator)
     {
         RuleFor(query => query.BusinessId)
-            .ProjectNotEmpty(translator, ProjectTranslation.BUSINESS_ID);
+            .ProjectNotEmpty(translator, ProjectNamings.BUSINESS_ID);
     }
 }

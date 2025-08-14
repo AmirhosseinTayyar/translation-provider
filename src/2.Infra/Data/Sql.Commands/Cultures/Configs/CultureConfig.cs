@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Domain.Common.Consts;
+using Core.Domain.Common.ValueObjects;
+using Core.Domain.Cultures.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TranslationProvider.Core.Domain.Common.Resources;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Cultures.Entities;
 using Zamin.Infra.Data.Sql.Commands.Extensions;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Cultures.Configs;
+namespace Infra.Data.Sql.Commands.Cultures.Configs;
 
 public sealed class CultureConfig : IEntityTypeConfiguration<Culture>
 {
@@ -14,7 +14,7 @@ public sealed class CultureConfig : IEntityTypeConfiguration<Culture>
         builder.AddRowVersionShadowProperty();
 
         builder.Property(c => c.BusinessId)
-            .HasMaxLength(ProjectConsts.BUSINESS_ID_LENGTH)
+            .HasMaxLength(ProjectValues.BUSINESS_ID_LENGTH)
             .IsRequired();
         builder.HasIndex(c => c.BusinessId).IsUnique();
 

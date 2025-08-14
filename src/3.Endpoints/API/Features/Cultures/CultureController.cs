@@ -1,18 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core.Contracts.Cultures.Commands.Create;
+using Core.Contracts.Cultures.Commands.Delete;
+using Core.Contracts.Cultures.Commands.Disable;
+using Core.Contracts.Cultures.Commands.Enable;
+using Core.Contracts.Cultures.Commands.Update;
+using Core.Contracts.Cultures.Queries.GetById;
+using Core.Contracts.Cultures.Queries.GetFilterablePaged;
+using Core.Contracts.Cultures.Queries.GetSelectList;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using System.Net;
-using TranslationProvider.Core.Contracts.Cultures.Commands.Create;
-using TranslationProvider.Core.Contracts.Cultures.Commands.Delete;
-using TranslationProvider.Core.Contracts.Cultures.Commands.Disable;
-using TranslationProvider.Core.Contracts.Cultures.Commands.Enable;
-using TranslationProvider.Core.Contracts.Cultures.Commands.Update;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetSelectList;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.EndPoints.Web.Controllers;
 
-namespace TranslationProvider.Endpoints.API.Features.Cultures;
+namespace Endpoints.API.Features.Cultures;
 
 [ApiController]
 [Route("api/[controller]/[action]")]

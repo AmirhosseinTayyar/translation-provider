@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Infra.Data.Sql.Commands.Common.ValueConverters;
+﻿using Core.Domain.Common.ValueObjects;
+using Infra.Data.Sql.Commands.Common.ValueConverters;
+using Microsoft.EntityFrameworkCore;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Common.Extensions;
+namespace Infra.Data.Sql.Commands.Common.Extensions;
 
 public static class CommonConversionExtentions
 {

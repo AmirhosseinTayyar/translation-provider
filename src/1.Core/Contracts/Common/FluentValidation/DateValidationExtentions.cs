@@ -1,8 +1,8 @@
-﻿using FluentValidation;
-using TranslationProvider.Core.Domain.Common.Resources;
+﻿using Core.Domain.Common.Consts;
+using FluentValidation;
 using Zamin.Extensions.Translations.Abstractions;
 
-namespace TranslationProvider.Core.Contracts.Common.FluentValidation;
+namespace Core.Contracts.Common.FluentValidation;
 
 public static class DateValidationExtentions
 {
@@ -14,7 +14,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectLessThan<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.LessThan(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -26,7 +26,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectLessThan<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.LessThan(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -38,7 +38,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectLessThanOrEqualTo<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.LessThanOrEqualTo(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -50,7 +50,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectLessThanOrEqualTo<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.LessThanOrEqualTo(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -62,7 +62,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectLessThanToday<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.LessThan(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the nullable date is less than today.
@@ -72,7 +72,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectLessThanToday<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.LessThan(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the date is less than or equal to today.
@@ -82,7 +82,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectLessThanOrEqualToday<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.LessThanOrEqualTo(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the nullable date is less than or equal to today.
@@ -92,7 +92,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectLessThanOrEqualToday<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.LessThanOrEqualTo(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_LESS_THAN_OR_EQUAL_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the date is greater than the specified date.
@@ -102,7 +102,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectGreaterThan<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.GreaterThan(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -114,7 +114,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectGreaterThan<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.GreaterThan(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -126,7 +126,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectGreaterThanOrEqualTo<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.GreaterThanOrEqualTo(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -138,7 +138,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectGreaterThanOrEqualTo<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name, DateTime dateToCompare)
         => ruleBuilder.GreaterThanOrEqualTo(dateToCompare)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL,
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL,
                                 name,
                                 dateToCompare.ToString("yyyy/MM/dd")]);
 
@@ -150,7 +150,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectGreaterThanToday<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.GreaterThan(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the nullable date is greater than today.
@@ -160,7 +160,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectGreaterThanToday<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.GreaterThan(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the date is greater than or equal to today.
@@ -170,7 +170,7 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime> ProjectGreaterThanOrEqualToday<T>(
         this IRuleBuilder<T, DateTime> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.GreaterThanOrEqualTo(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL_TO_TODAY, name]);
 
     /// <summary>
     /// Validates that the nullable date is greater than or equal to today.
@@ -180,5 +180,5 @@ public static class DateValidationExtentions
     public static IRuleBuilderOptions<T, DateTime?> ProjectGreaterThanOrEqualToday<T>(
         this IRuleBuilder<T, DateTime?> ruleBuilder, ITranslator translator, string name)
         => ruleBuilder.GreaterThanOrEqualTo(DateTime.Today)
-        .WithMessage(translator[ProjectValidationError.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL_TO_TODAY, name]);
+        .WithMessage(translator[ProjectValidationErrors.VALIDATION_ERROR_DATE_GREATER_THAN_OR_EQUAL_TO_TODAY, name]);
 }

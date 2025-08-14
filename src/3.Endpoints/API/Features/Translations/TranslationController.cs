@@ -1,17 +1,17 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Core.Contracts.Translations.Commands.Create;
+using Core.Contracts.Translations.Commands.Delete;
+using Core.Contracts.Translations.Commands.Update;
+using Core.Contracts.Translations.Queries.GetById;
+using Core.Contracts.Translations.Queries.GetFilterablePaged;
+using Core.Contracts.Translations.Queries.GetLocalizations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using System.Net;
-using TranslationProvider.Core.Contracts.Translations.Commands.Create;
-using TranslationProvider.Core.Contracts.Translations.Commands.Delete;
-using TranslationProvider.Core.Contracts.Translations.Commands.Update;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetById;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetLocalizations;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.EndPoints.Web.Controllers;
 
-namespace TranslationProvider.Endpoints.API.Features.Translations;
+namespace Endpoints.API.Features.Translations;
 
 [ApiController]
 [Route("api/[controller]/[action]")]

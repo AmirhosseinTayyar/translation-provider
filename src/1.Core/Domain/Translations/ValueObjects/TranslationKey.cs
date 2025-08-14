@@ -1,8 +1,8 @@
-using TranslationProvider.Core.Domain.Common.Resources;
+using Core.Domain.Common.Consts;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.Domain.ValueObjects;
 
-namespace TranslationProvider.Core.Domain.Translations.ValueObjects;
+namespace Core.Domain.Translations.ValueObjects;
 
 public sealed class TranslationKey : BaseValueObject<TranslationKey>
 {
@@ -31,12 +31,12 @@ public sealed class TranslationKey : BaseValueObject<TranslationKey>
     {
         if (string.IsNullOrWhiteSpace(value))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, TRANSLATION_KEY);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, TRANSLATION_KEY);
         }
 
         if (value.Length < MIN_LENGTH || value.Length > MAX_LENGTH)
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_STRING_LENGTH_BETWEEN,
                                                        TRANSLATION_KEY,
                                                        MIN_LENGTH.ToString(),
                                                        MAX_LENGTH.ToString());
@@ -44,7 +44,7 @@ public sealed class TranslationKey : BaseValueObject<TranslationKey>
 
         if (!value.All(c => char.IsUpper(c) || char.IsDigit(c) || c == '_'))
         {
-            throw new InvalidValueObjectStateException(ProjectValidationError.VALIDATION_ERROR_NOT_VALID, TRANSLATION_KEY);
+            throw new InvalidValueObjectStateException(ProjectValidationErrors.VALIDATION_ERROR_NOT_VALID, TRANSLATION_KEY);
         }
     }
     #endregion

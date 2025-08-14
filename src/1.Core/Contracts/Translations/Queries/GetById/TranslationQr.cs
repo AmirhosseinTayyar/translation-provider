@@ -1,4 +1,4 @@
-﻿namespace TranslationProvider.Core.Contracts.Translations.Queries.GetById;
+﻿namespace Core.Contracts.Translations.Queries.GetById;
 using System.ComponentModel;
 
 public sealed class TranslationQr

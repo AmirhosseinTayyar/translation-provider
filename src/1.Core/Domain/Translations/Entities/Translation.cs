@@ -1,10 +1,10 @@
-﻿using TranslationProvider.Core.Domain.Common.ValueObjects;
-using TranslationProvider.Core.Domain.Translations.Events;
-using TranslationProvider.Core.Domain.Translations.Parameters;
-using TranslationProvider.Core.Domain.Translations.ValueObjects;
+﻿using Core.Domain.Common.ValueObjects;
+using Core.Domain.Translations.Events;
+using Core.Domain.Translations.Parameters;
+using Core.Domain.Translations.ValueObjects;
 using Zamin.Core.Domain.Entities;
 
-namespace TranslationProvider.Core.Domain.Translations.Entities;
+namespace Core.Domain.Translations.Entities;
 
 public sealed class Translation : AggregateRoot<int>
 {

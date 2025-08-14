@@ -1,12 +1,12 @@
-﻿using TranslationProvider.Core.Contracts.Translations.Commands;
-using TranslationProvider.Core.Contracts.Translations.Commands.Delete;
-using TranslationProvider.Core.Domain.Common.Guards;
-using TranslationProvider.Core.Domain.Translations.Entities;
+﻿using Core.Contracts.Translations.Commands;
+using Core.Contracts.Translations.Commands.Delete;
+using Core.Domain.Common.Guards;
+using Core.Domain.Translations.Entities;
 using Zamin.Core.ApplicationServices.Commands;
 using Zamin.Core.RequestResponse.Commands;
 using Zamin.Utilities;
 
-namespace TranslationProvider.Core.ApplicationService.Translations.Commands.Delete;
+namespace Core.ApplicationService.Translations.Commands.Delete;
 
 public sealed class TranslationDeleteHandler(ZaminServices zaminServices, ITranslationCommandRepository commandRepository)
     : CommandHandler<TranslationDeleteCommand>(zaminServices)

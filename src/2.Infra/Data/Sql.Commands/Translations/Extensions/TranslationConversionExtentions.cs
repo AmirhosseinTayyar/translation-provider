@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TranslationProvider.Core.Domain.Translations.ValueObjects;
-using TranslationProvider.Infra.Data.Sql.Commands.Translations.ValueConverters;
+﻿using Core.Domain.Translations.ValueObjects;
+using Infra.Data.Sql.Commands.Translations.ValueConverters;
+using Microsoft.EntityFrameworkCore;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Translations.Extensions;
+namespace Infra.Data.Sql.Commands.Translations.Extensions;
 
 public static class TranslationConversionExtentions
 {

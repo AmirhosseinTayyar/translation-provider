@@ -1,10 +1,10 @@
-﻿using TranslationProvider.Core.Contracts.Cultures.Queries;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
+﻿using Core.Contracts.Cultures.Queries;
+using Core.Contracts.Cultures.Queries.GetById;
 using Zamin.Core.ApplicationServices.Queries;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.Utilities;
 
-namespace TranslationProvider.Core.ApplicationService.Cultures.Queries.GetById;
+namespace Core.ApplicationService.Cultures.Queries.GetById;
 
 public sealed class CultureGetByIdHandler(ZaminServices zaminServices, ICultureQueryRepository queryRepository)
     : QueryHandler<CultureGetByIdQuery, CultureQr?>(zaminServices)

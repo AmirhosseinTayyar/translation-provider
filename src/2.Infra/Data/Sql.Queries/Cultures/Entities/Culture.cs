@@ -1,8 +1,8 @@
-﻿using TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetSelectList;
+﻿using Core.Contracts.Cultures.Queries.GetById;
+using Core.Contracts.Cultures.Queries.GetFilterablePaged;
+using Core.Contracts.Cultures.Queries.GetSelectList;
 
-namespace TranslationProvider.Infra.Data.Sql.Queries.Cultures.Entities;
+namespace Infra.Data.Sql.Queries.Cultures.Entities;
 
 public sealed class Culture()
 {

@@ -1,8 +1,8 @@
-﻿using TranslationProvider.Core.Contracts.Translations.Queries.GetById;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetLocalizations;
+﻿using Core.Contracts.Translations.Queries.GetById;
+using Core.Contracts.Translations.Queries.GetFilterablePaged;
+using Core.Contracts.Translations.Queries.GetLocalizations;
 
-namespace TranslationProvider.Infra.Data.Sql.Queries.Translations.Entities;
+namespace Infra.Data.Sql.Queries.Translations.Entities;
 
 public sealed class Translation
 {

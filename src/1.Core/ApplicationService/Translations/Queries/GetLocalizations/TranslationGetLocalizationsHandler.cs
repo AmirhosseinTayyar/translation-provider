@@ -1,10 +1,10 @@
-﻿using TranslationProvider.Core.Contracts.Translations.Queries;
-using TranslationProvider.Core.Contracts.Translations.Queries.GetLocalizations;
+﻿using Core.Contracts.Translations.Queries;
+using Core.Contracts.Translations.Queries.GetLocalizations;
 using Zamin.Core.ApplicationServices.Queries;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.Utilities;
 
-namespace TranslationProvider.Core.ApplicationService.Translations.Queries.GetLocalizations;
+namespace Core.ApplicationService.Translations.Queries.GetLocalizations;
 public sealed class TranslationGetLocalizationsHandler(ZaminServices zaminServices, ITranslationQueryRepository queryRepository)
     : QueryHandler<TranslationGetLocalizationsQuery, List<TranslationLocalizationItemQr>>(zaminServices)
 {

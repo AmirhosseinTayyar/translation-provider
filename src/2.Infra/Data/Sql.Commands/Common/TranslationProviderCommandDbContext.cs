@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core.Domain.Cultures.Entities;
+using Core.Domain.Translations.Entities;
+using Infra.Data.Sql.Commands.Common.Extensions;
+using Infra.Data.Sql.Commands.Translations.Extensions;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using TranslationProvider.Core.Domain.Cultures.Entities;
-using TranslationProvider.Core.Domain.Translations.Entities;
-using TranslationProvider.Infra.Data.Sql.Commands.Common.Extensions;
-using TranslationProvider.Infra.Data.Sql.Commands.Translations.Extensions;
 using Zamin.Extensions.Events.Outbox.Dal.EF;
 
-namespace TranslationProvider.Infra.Data.Sql.Commands.Common;
+namespace Infra.Data.Sql.Commands.Common;
 
 public sealed class TranslationProviderCommandDbContext(DbContextOptions<TranslationProviderCommandDbContext> options)
     : BaseOutboxCommandDbContext(options)

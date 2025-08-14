@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TranslationProvider.Core.Contracts.Cultures.Queries;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetById;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetFilterablePaged;
-using TranslationProvider.Core.Contracts.Cultures.Queries.GetSelectList;
-using TranslationProvider.Infra.Data.Sql.Queries.Common;
-using TranslationProvider.Infra.Data.Sql.Queries.Cultures.Entities;
+﻿using Core.Contracts.Cultures.Queries;
+using Core.Contracts.Cultures.Queries.GetById;
+using Core.Contracts.Cultures.Queries.GetFilterablePaged;
+using Core.Contracts.Cultures.Queries.GetSelectList;
+using Infra.Data.Sql.Queries.Common;
+using Infra.Data.Sql.Queries.Cultures.Entities;
+using Microsoft.EntityFrameworkCore;
 using Zamin.Core.RequestResponse.Queries;
 using Zamin.Extensions.Translations.Abstractions;
 using Zamin.Infra.Data.Sql.Queries;
 
-namespace TranslationProvider.Infra.Data.Sql.Queries.Cultures;
+namespace Infra.Data.Sql.Queries.Cultures;
 
 public sealed class CultureQueryRepository(TranslationProviderQueryDbContext dbContext, ITranslator translator)
     : BaseQueryRepository<TranslationProviderQueryDbContext>(dbContext), ICultureQueryRepository

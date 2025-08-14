@@ -2,6 +2,7 @@
 using Core.Domain.Common.ValueObjects;
 using Core.Domain.Translations.Entities;
 using Core.Domain.Translations.ValueObjects;
+using Infra.Data.Sql.Commands.Translations.ValueGenerators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Zamin.Infra.Data.Sql.Commands.Extensions;
@@ -15,7 +16,9 @@ public sealed class TranslationConfig : IEntityTypeConfiguration<Translation>
         builder.AddRowVersionShadowProperty();
 
         builder.Property(c => c.BusinessId)
-            .HasDefaultValue("NEWSEQUENTIALID()")
+            .HasDefaultValueSql("NEWSEQUENTIALID()")
+            .ValueGeneratedOnAdd()
+            .HasValueGenerator<GuidValueGenerator>()
             .HasMaxLength(ProjectValues.BUSINESS_ID_LENGTH)
             .IsRequired();
         builder.HasIndex(c => c.BusinessId).IsUnique();

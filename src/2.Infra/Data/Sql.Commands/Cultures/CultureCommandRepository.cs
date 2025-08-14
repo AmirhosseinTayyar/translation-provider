@@ -1,4 +1,5 @@
-﻿using Core.Domain.Cultures.Entities;
+﻿using Core.Contracts.Cultures.Commands;
+using Core.Domain.Cultures.Entities;
 using Infra.Data.Sql.Commands.Common;
 using Zamin.Infra.Data.Sql.Commands;
 
